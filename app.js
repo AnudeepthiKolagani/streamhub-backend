@@ -1,11 +1,9 @@
 import express from "express";
+import videoRoutes from "./routes/video.route.js";
 
-const app = express();
+const app = express()
 
-app.get("/", (req, res) => {
-  res.status(200).send({
-    message: "Welcome to stream hub",
-  });
-});
+// Video routes
+app.use("/api/v1/video", videoRoutes);
 
-export default app
+export default app;
